@@ -1,7 +1,7 @@
 # QMetric Code Exercise
 We value the ability to model problems in software, so our first assessment will be around that subject. The exercise is to model and code a simple supermarket pricing solution and it is inspired on [PragDave Supermaket Kata](http://codekata.com/kata/kata01-supermarket-pricing/). 
  
-Please read through the description carefully and implement a solution for it. We don't want you to over-engineer the solution but be prepared to extend the functionality in the next step of the interview process. Please dedicate **around 3 hours** to do the exercise and then send it back for review. Don't get concerned if the feedback is to complete the exercise! 
+Please read through the description carefully and implement a solution for it. We don't want you to over-engineer the solution but be prepared to extend the functionality in the next step of the interview process. 
 
 Please create a local repository using git or and then commit locally. When you have finished please zip up the whole folder (including .git folder) and email to us (arodriguez@qmetric.co.uk) within 3 days. We will then review it within 2 days. We provide a project skeleton in Maven, but feel free to use whatever build tool you like (gradle, etc).
 
