@@ -11,4 +11,3 @@ Feature: Shopping Basket Scenario
   |ORANGE  | 0.200    | 0.40        |
   |COKE    | 1        | 0.70        |
 
- 
