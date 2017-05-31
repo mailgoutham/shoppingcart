@@ -20,16 +20,23 @@ public class CartService {
         return inventory.getItems().
                 entrySet().
                 stream().
-                map(d -> valueOf(d.getKey().getPrice() * d.getValue() -
-                                ( discounts.
-                                        stream().
-                                        mapToDouble(x -> x.apply(
-                                                d.getKey(),
-                                                d.getValue())).
-                                        sum())
-                )).
+                map(d -> valueOf(calculateActualPrice(d) - calculateDiscount(d, discounts))).
                 reduce(ZERO, BigDecimal::add).
                 setScale(2, ROUND_HALF_UP).
                 doubleValue();
+    }
+
+    private double calculateDiscount(Map.Entry<Item, Double> entry,  List<BiFunction<Item,Double, Double>> discounts) {
+        return discounts.
+                stream().
+                mapToDouble(x -> x.apply(
+                        entry.getKey(),
+                        entry.getValue())).
+                sum();
+
+    }
+
+    private double calculateActualPrice(Map.Entry<Item, Double> entry){
+        return entry.getKey().getPrice() * entry.getValue();
     }
 }
