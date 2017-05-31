@@ -11,3 +11,10 @@ Feature: Shopping Basket Scenario
   |ORANGE  | 0.200    | 0.40        |
   |COKE    | 1        | 0.70        |
 
+  Scenario Outline: shopping basket has multiple products with NO DISCOUNT
+    Given The shopping basket has multiple products <PRODUCT1> <QUANTITY1> <PRODUCT2> <QUANTITY2>
+    When I calculate the final price
+    Then The price should show <FINAL_PRICE>
+  Examples:
+    |PRODUCT1 | QUANTITY1 |PRODUCT2 | QUANTITY2 |FINAL_PRICE |
+    |BEANS    | 2         |ORANGE   | 0.200     | 1.40       |

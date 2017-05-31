@@ -41,7 +41,11 @@ public class MyStepdefs {
         inventory.addItem(Item.fromName(product), quantity);
     }
 
-
+    @Given("^The shopping basket has multiple products (.+) (.+) (.+) (.+)$")
+    public void The_shopping_basket_has_multiple_products_PRODUCT_QUANTITY_PRODUCT_QUANTITY_(String product1, double quantity1, String product2, double quantity2) throws Throwable {
+        inventory.addItem(Item.fromName(product1), quantity1);
+        inventory.addItem(Item.fromName(product2), quantity2);
+    }
 
 
 }
